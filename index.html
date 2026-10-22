@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ibraheem</title>
+  <meta name="description" content="Ibraheem, 17. AI enthusiast who self-hosts everything: local models, a triple-boot main rig and a home server, two PCs pretending to be Macs.">
+  <meta name="theme-color" content="#eceef1">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("has-js")</script>
+</head>
+<body>
+  <a class="skip" href="#about">Skip to content</a>
+
+  <!-- shared drawing: an original glossy drive icon; the LED takes the button's colour -->
+  <svg class="defs" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="d-metal" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#f7f8f9"/>
+        <stop offset=".5" stop-color="#d9dde2"/>
+        <stop offset=".52" stop-color="#cbd0d6"/>
+        <stop offset="1" stop-color="#e3e6ea"/>
+      </linearGradient>
+      <linearGradient id="d-sheen" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#fff" stop-opacity=".95"/>
+        <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+      </linearGradient>
+      <symbol id="drive" viewBox="0 0 64 64">
+        <ellipse cx="32" cy="55" rx="24" ry="3.5" fill="#1b2a40" opacity=".18"/>
+        <rect x="8" y="15" width="48" height="37" rx="8" fill="url(#d-metal)" stroke="#7f8995"/>
+        <rect x="11" y="17" width="42" height="13" rx="6" fill="url(#d-sheen)"/>
+        <rect x="15" y="38" width="22" height="3" rx="1.5" fill="#9ba4ae"/>
+        <rect x="15" y="41" width="22" height="1" rx=".5" fill="#fff" opacity=".9"/>
+        <circle cx="46" cy="40" r="4.6" fill="currentColor" stroke="#000" stroke-opacity=".25"/>
+        <ellipse cx="46" cy="38.2" rx="2.9" ry="1.6" fill="#fff" opacity=".85"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="masthead">
+    <div class="bar">
+      <a class="wordmark" href="#top" aria-label="Ibraheem, back to top">
+        <span class="wordmark__drop" aria-hidden="true"></span>
+        Ibraheem
+      </a>
+      <button class="gel gel--graphite menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-btn>
+        <span class="menu-btn__bars" aria-hidden="true"></span>
+        Menu
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#rig">Main rig</a>
+        <a href="#server">Server</a>
+        <a href="#ai">Local AI</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <div class="intro" id="top">
+      <div class="intro__text">
+        <h1>Ibraheem</h1>
+        <p class="lede">I’m 17, and I self-host everything. I run large AI models on my own hardware, on two PCs that are pretending to be Macs.</p>
+        <p class="actions">
+          <a class="gel gel--default" href="#rig">See the machines</a>
+          <a class="gel gel--graphite" href="https://github.com/gtxg16">GitHub</a>
+        </p>
+      </div>
+
+      <div class="picker" data-picker role="group" aria-labelledby="picker-title">
+        <div class="picker__bar">
+          <p class="picker__title" id="picker-title">Boot picker</p>
+          <div class="seg" role="group" aria-label="Machine" data-seg hidden>
+            <button type="button" aria-pressed="true" data-machine="rig">Main rig</button>
+            <button type="button" aria-pressed="false" data-machine="server">Home server</button>
+          </div>
+        </div>
+
+        <ul class="drives" data-drives="rig" aria-label="Main rig drives">
+          <li><button class="drive" type="button" aria-pressed="false" data-os="Windows 11" style="--led:#3a96ee">
+            <span class="drive__art"><svg aria-hidden="true"><use href="#drive"/></svg></span>
+            <span class="drive__label"><span class="drive__name">Windows&nbsp;11</span></span>
+          </button></li>
+          <li><button class="drive" type="button" aria-pressed="false" data-os="Arch Linux" style="--led:#17b0c4">
+            <span class="drive__art"><svg aria-hidden="true"><use href="#drive"/></svg></span>
+            <span class="drive__label"><span class="drive__name">Arch Linux</span></span>
+          </button></li>
+          <li><button class="drive" type="button" aria-pressed="false" data-os="macOS Sequoia" data-hack style="--led:#45b85a">
+            <span class="drive__art"><svg aria-hidden="true"><use href="#drive"/></svg></span>
+            <span class="drive__label"><span class="drive__name">macOS Sequoia</span></span>
+          </button></li>
+        </ul>
+
+        <ul class="drives" data-drives="server" aria-label="Home server drives" hidden>
+          <li><button class="drive" type="button" aria-pressed="false" data-os="Proxmox" style="--led:#ef8a3b">
+            <span class="drive__art"><svg aria-hidden="true"><use href="#drive"/></svg></span>
+            <span class="drive__label"><span class="drive__name">Proxmox</span></span>
+          </button></li>
+          <li><button class="drive" type="button" aria-pressed="false" data-os="macOS Sequoia" data-hack style="--led:#45b85a">
+            <span class="drive__art"><svg aria-hidden="true"><use href="#drive"/></svg></span>
+            <span class="drive__label"><span class="drive__name">macOS Sequoia</span></span>
+          </button></li>
+        </ul>
+
+        <div class="picker__status">
+          <div class="progress" data-progress hidden><span class="progress__fill"></span></div>
+          <p data-status aria-live="polite">Main rig: Windows 11, Arch Linux and macOS Sequoia.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section field-sky" id="about" aria-labelledby="about-h">
+      <div class="col">
+        <h2 id="about-h">About</h2>
+        <p>I’m an AI enthusiast and I self-host everything. I run large models locally on my own hardware, and I’m particularly interested in abliterated models.</p>
+        <p>My main PC triple-boots Windows 11, Arch Linux and a Hackintosh. My home server dual-boots Proxmox and another Hackintosh. So that’s two PCs that spend part of their lives pretending to be Macs.</p>
+        <p>I like owning the whole stack: the hardware, the operating systems on it, and the models running on top.</p>
+      </div>
+    </section>
+
+    <section class="section field-aqua" id="rig" aria-labelledby="rig-h">
+      <div class="col">
+        <h2 id="rig-h">Main rig</h2>
+        <p>One PC, three operating systems. One of them thinks it’s a Mac.</p>
+
+        <article class="sheet" aria-label="Main rig specs">
+          <div class="sheet__head">
+            <p class="sheet__title">Specs</p>
+            <span class="tag tag--aqua">Triple boot</span>
+          </div>
+          <dl class="specs">
+            <div><dt>GPU</dt><dd>AMD Radeon RX&nbsp;6800 (16&nbsp;GB)</dd></div>
+            <div><dt>CPU</dt><dd>AMD Ryzen 9 3900X (12 cores / 24 threads)</dd></div>
+            <div><dt>RAM</dt><dd>32&nbsp;GB</dd></div>
+            <div>
+              <dt>Triple boot</dt>
+              <dd>
+                <ul class="tags" aria-label="Operating systems">
+                  <li class="tag">Windows 11</li>
+                  <li class="tag">Arch Linux</li>
+                  <li class="tag tag--aqua">macOS Sequoia (Hackintosh)</li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </article>
+      </div>
+    </section>
+
+    <section class="section field-aqua" id="server" aria-labelledby="server-h">
+      <div class="col">
+        <h2 id="server-h">Home server</h2>
+        <p>The second machine, in the same format. It dual-boots, and one side of it is a Mac that isn’t.</p>
+
+        <article class="sheet" aria-label="Home server specs">
+          <div class="sheet__head">
+            <p class="sheet__title">Specs</p>
+            <span class="tag tag--aqua">Dual boot</span>
+          </div>
+          <dl class="specs">
+            <div><dt>GPU</dt><dd>Integrated graphics (Intel HD Graphics 4600)</dd></div>
+            <div><dt>CPU</dt><dd>Intel Core i5-4570 (4 cores / 4 threads)</dd></div>
+            <div><dt>RAM</dt><dd>8&nbsp;GB</dd></div>
+            <div><dt>Storage</dt><dd>256&nbsp;GB</dd></div>
+            <div>
+              <dt>Dual boot</dt>
+              <dd>
+                <ul class="tags" aria-label="Operating systems">
+                  <li class="tag">Proxmox</li>
+                  <li class="tag tag--aqua">macOS Sequoia (Hackintosh)</li>
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>Runs</dt>
+              <dd>
+                <ul class="tags" aria-label="Services">
+                  <li class="tag">Open Terminal</li>
+                  <li class="tag">Tailscale</li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </article>
+      </div>
+    </section>
+
+    <section class="section field-sky" id="ai" aria-labelledby="ai-h">
+      <div class="col">
+        <h2 id="ai-h">Local AI</h2>
+        <p>Everything here runs on the main rig, on my own hardware.</p>
+
+        <dl class="plain">
+          <div>
+            <dt>Runtime</dt>
+            <dd>llama.cpp on the Vulkan backend, about 30&nbsp;tokens a second on the RX&nbsp;6800.</dd>
+          </div>
+          <div>
+            <dt>Front end</dt>
+            <dd>Open WebUI, plus Open Terminal.</dd>
+          </div>
+        </dl>
+
+        <div class="speed" data-speed>
+          <p class="speed__head" id="speed-h">What 30 tokens a second looks like</p>
+          <div class="speed__out" aria-labelledby="speed-h">
+            <p class="speed__ghost" aria-hidden="true" data-speed-ghost></p>
+            <p class="speed__text" data-speed-text>This is roughly how fast a 27B model writes on my RX&nbsp;6800, running llama.cpp on the Vulkan backend: about thirty tokens every second, which is faster than most people read.</p>
+          </div>
+          <div class="speed__controls">
+            <button class="gel" type="button" data-speed-play hidden>Play at 30 tokens/sec</button>
+            <p class="speed__meta" data-speed-meta hidden>Simulated in your browser.</p>
+          </div>
+        </div>
+
+        <h3>Abliterated models</h3>
+        <p>Chat models are trained to refuse some requests, and it turns out that refusal mostly comes down to one direction inside the model. Abliteration finds that “refusal direction” and removes it from the weights, so the model stops refusing without being retrained.</p>
+
+        <h3>Models</h3>
+        <article class="model">
+          <p class="model__name">Qwen3.8-27B <span class="nw">GSQ-RCO</span> GGUF</p>
+          <p class="model__by">by ISTA-DASLab</p>
+          <ul class="tags" aria-label="Details">
+            <li class="tag tag--aqua">IQ3_S</li>
+            <li class="tag">~12&nbsp;GB</li>
+            <li class="tag">MTP head</li>
+          </ul>
+          <p>Non-uniform, mixed-precision quantization. IQ3_S is their “task-lossless” point at around 12&nbsp;GB, and I run it with the MTP head (multi-token prediction) for speculative decoding.</p>
+          <a class="gel gel--graphite gel--small" href="https://huggingface.co/ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF">View on Hugging Face</a>
+        </article>
+
+        <article class="model">
+          <p class="model__name">Huihui Qwen3.8-27B abliterated GGUF</p>
+          <p class="model__by">by huihui-ai</p>
+          <ul class="tags" aria-label="Details">
+            <li class="tag tag--aqua">UD-IQ4_XS</li>
+            <li class="tag">Abliterated</li>
+          </ul>
+          <p>A refusal-removed variant of the same model, made with abliteration.</p>
+          <a class="gel gel--graphite gel--small" href="https://huggingface.co/huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF">View on Hugging Face</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section field-deep" id="contact" aria-labelledby="contact-h">
+      <div class="col">
+        <h2 id="contact-h">Contact</h2>
+        <p>You can find me and my code on GitHub.</p>
+        <p class="actions">
+          <a class="gel" href="https://github.com/gtxg16">github.com/gtxg16</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot__inner">
+      <p>Ibraheem, 2026.</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
